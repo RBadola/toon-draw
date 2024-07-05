@@ -37,6 +37,7 @@ body {
   padding: 15px 5px;
   border-radius: var(--borderRadius);
   list-style: none;
+  overflow: hidden;
 }
 .container .options::-webkit-scrollbar {
   display: none;
