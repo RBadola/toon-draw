@@ -26,8 +26,12 @@ function utility(event) {
       break;
     case "bin":
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
       break;
     case "download":
+      downloadDrawing();
+
       break;
     default:
       break;
@@ -65,10 +69,10 @@ function utility(event) {
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 let drawing = false;
+let scr = 225;
 
 const canvasOffsetX = canvas.offsetLeft - 235;
-const canvasOffsetY = canvas.offsetTop;
-
+let canvasOffsetY = canvas.offsetTop - 325;
 canvas.width = window.innerWidth - window.innerWidth / 2;
 canvas.height = 600;
 ctx.fillStyle = "white";
@@ -79,7 +83,6 @@ function startDrawing(event) {
   drawing = true;
   ctx.beginPath();
   ctx.moveTo(event.clientX - canvasOffsetX, event.clientY - canvasOffsetY);
-  console.log(event.clientX - canvasOffsetX, event.clientY);
 }
 
 function stopDrawing() {
@@ -108,10 +111,8 @@ canvas.addEventListener("mousemove", draw);
 // download function
 
 const downloadDrawing = () => {
+  console.log("clicked");
   let link = document.querySelector("#downloadlink");
   link.href = canvas.toDataURL();
   link.click();
 };
-document
-  .getElementById("downloadButton")
-  .addEventListener("click", downloadDrawing);
