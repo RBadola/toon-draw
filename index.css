@@ -1,156 +1,18 @@
-:root {
-  --secondary: #8338ec;
-  --borderRadius: 10px;
-  --cursoricon: url(), auto;
-  --amber: #ffbe0bff;
-  --orange-pantone: #fb5607ff;
-  --rose: #ff006eff;
-  --blue-violet: #8338ecff;
-  --azure: #3a86ffff;
-}
-body {
-  background-color: #3a86ff;
-  /* overflow: hidden; */
-}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-.container {
-  width: 100%;
-  height: 100vh;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: bisque;
   display: flex;
-  justify-content: space-between;
+  /* height: 100vh; */
   align-items: center;
-  gap: 2rem;
-  padding: 3rem;
-  margin: auto;
-}
-.container .options {
-  width: 60px;
-  height: 100%;
-  border: 2px solid black;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--amber);
-  padding: 15px 5px;
-  border-radius: var(--borderRadius);
-  list-style: none;
-  overflow: hidden;
-}
-.container .options::-webkit-scrollbar {
-  display: none;
-}
-.container .options > p {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid black;
-  margin: 10px auto;
-  background-color: var(--orange-pantone);
-  display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 10px;
 }
-.container .options p:hover {
-  background-color: var(--amber);
-  color: white;
-  cursor: var(--cursoricon);
-}
-.container .options p > * {
-  pointer-events: none;
-}
-.drawinga-area {
-  aspect-ratio: 1/1;
-  width: 100%;
-  height: 100%;
+canvas {
   border: 2px solid black;
-  border-radius: var(--borderRadius);
   /* background-color: white; */
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-}
-.drawinga-area > canvas {
-  width: 100%;
-  height: 100%;
-}
-canvas{
-  background-color: white;
-  z-index: 50;
-}
-.tool-size {
-  position: absolute;
-  background-color: var(--secondary);
-  padding: 3px 8px;
-  border-radius: var(--borderRadius);
-  bottom: -37px;
-  display: flex;
-  gap:4px ;
-}
-.tool-size input {
-  accent-color: pink;
-}
-.heading,
-footer {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 4rem;
-  text-decoration: double;
-  line-height: 5rem;
-  text-align: center;
-}
-footer {
-  background-color: aqua;
-  height: 10vh;
-  font-size: 2rem;
-  /* position: fixed; */
-  bottom: 0;
-  width: 100%;
-}
-/* multiple */
-:is(.dark-theme, .dim-theme) :where(button, a) {
-  color: rebeccapurple;
-}
-
-/* stacked */
-:is(h1, h2):where(.hero, .subtitle) {
-  text-transform: uppercase;
-}
-
-/* nested */
-.hero:is(h1, h2, :is(.header, .boldest)) {
-  font-weight: 900;
-}
-
-@media screen and (max-width: 700px) {
-  body {
-    overflow: auto;
-  }
-  .drawinga-area {
-    width: 100%;
-  }
-  .container {
-    flex-direction: column;
-    padding: 1rem;
-  }
-  .container .options {
-    width: 100%;
-    height: 80px;
-    flex-direction: row;
-    padding: 5px;
-    gap: 4px;
-    overflow: hidden;
-  }
-  .container .options > p {
-    margin: 0;
-    width: 40px;
-    height: 40px;
-    padding: 5px;
-  }
-  .options.oneclick{
-    display: none;
-  }
 }
